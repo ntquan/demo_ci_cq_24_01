@@ -23,6 +23,21 @@ def get_numbers_from_user():
         except ValueError as e:
             print(f"Lỗi: {e}. Vui lòng nhập lại.")
 
+def calculate_sub(numbers):
+    # Calculate sub of numbers
+    if not numbers:
+        raise ValueError("Dãy số không được rỗng nha.")
+    for n in numbers:
+        if not isinstance(n, int):
+            raise ValueError("Tất cả các phần tử trong dãy số phải là số nguyên.")
+        if n <= 0:
+            raise ValueError("Tất cả các số phải là số nguyên dương.")
+    sub = numbers[0]
+    for n in numbers[1:]:
+        sub -= n
+    return sub
+
+
 # Main function
 if __name__ == "__main__":
     numbers = get_numbers_from_user()
