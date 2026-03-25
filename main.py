@@ -37,6 +37,19 @@ def calculate_sub(numbers):
         sub -= n
     return sub
 
+# Create calculate multi function
+def calculate_multi(numbers):
+    if not numbers:
+        raise ValueError("Dãy số không được rỗng nha.")
+    for n in numbers:
+        if not isinstance(n, int):
+            raise ValueError("Tất cả các phần tử trong dãy số phải là số nguyên.")
+        if n <= 0:
+            raise ValueError("Tất cả các số phải là số nguyên dương.")
+    multi = 1
+    for n in numbers:
+        multi *= n
+    return multi
 
 # Main function
 if __name__ == "__main__":
@@ -44,5 +57,9 @@ if __name__ == "__main__":
     try:
         total, average = calculate_sum_and_average(numbers)
         print(f"Tổng: {total}, Trung bình: {average}")
+        sub = calculate_sub(numbers)
+        print(f"Hiệu: {sub}")
+        multi = calculate_multi(numbers)
+        print(f"Tích: {multi}")
     except ValueError as e:
         print(f"Lỗi: {e}")
