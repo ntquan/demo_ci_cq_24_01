@@ -22,7 +22,7 @@ class TestCalculateFunctions(unittest.TestCase):
 
     # Write unitest for calculate_sub function
     def test_calculate_sub_valid_numbers(self):
-        self.assertEqual(calculate_sub([10, 2, 3]), 4)
+        self.assertEqual(calculate_sub([10, 2, 3]), 5)
 
     def test_calculate_sub_empty_list(self):
         with self.assertRaises(ValueError) as context:
