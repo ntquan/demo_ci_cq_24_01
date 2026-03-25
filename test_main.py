@@ -1,5 +1,5 @@
 import unittest
-from main import calculate_multi, calculate_sub, calculate_sum_and_average, get_numbers_from_user
+from main import calculate_multi, calculate_sub, calculate_sum_and_average, get_numbers_from_user, print_hello_world
 
 class TestCalculateFunctions(unittest.TestCase):
 
@@ -54,6 +54,17 @@ class TestCalculateFunctions(unittest.TestCase):
         with self.assertRaises(ValueError):
             calculate_multi(["a", "b", "c"])
 
+    # write unit-test for print_hello_world
+    def test_print_hello_world(self):
+        from io import StringIO
+        import sys
+
+        captured_output = StringIO()
+        sys.stdout = captured_output
+        print_hello_world()
+        sys.stdout = sys.__stdout__
+
+        self.assertEqual(captured_output.getvalue().strip(), "Hello, World!")
 
 if __name__ == '__main__':
     unittest.main()

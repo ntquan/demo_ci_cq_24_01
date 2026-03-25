@@ -51,6 +51,10 @@ def calculate_multi(numbers):
         multi *= n
     return multi
 
+# Create function print "hello world"
+def print_hello_world():
+    print("Hello, World!")
+
 # Main function
 if __name__ == "__main__":
     numbers = get_numbers_from_user()
